@@ -15,6 +15,7 @@
 | 3 | Component Modelling & Architectural Pattern Selection | [`Lab-3/`](Lab-3/) | UML component diagram, justification for a microservices architecture |
 | 4 | Vibe Coding: Defender Repair | [`Lab-4/`](Lab-4/) | Fixed game, before/after gameplay videos, LLM chat history |
 | 5 | Static Code Analysis | [`Lab-5/`](Lab-5/) | Fixed `blood_donation.py`, before/after reports, issue table, reflection, lab report PDF |
+| 6 | Code & Branch Coverage Analysis | [`Lab-6/`](Lab-6/) | Code- and branch-coverage test files for `airline_baggage.py`, coverage screenshots and reports |
 
 ---
 
@@ -84,23 +85,44 @@ Main fixes:
 
 See [`Lab-5/README.md`](Lab-5/README.md) for the full list of files.
 
+## Lab 6: Code & Branch Coverage Analysis
+
+Line and branch coverage of `airline_baggage.py` from the assigned repo [SETAPESU26/L6_L7_28_airline_baggage](https://github.com/SETAPESU26/L6_L7_28_airline_baggage) were measured with `coverage` and `pytest`.
+
+| Test file | Tests | Line coverage | Branch coverage |
+|-----------|-------|---------------|-----------------|
+| Starter `test_airline_baggage.py` | 2 | 38% | 32% |
+| `CodeCoverageTest_PES1UG24CS156_airline_baggage.py` | 11 | **100%** | 98% (1 branch missed) |
+| `BranchCoverageTest_PES1UG24CS156_airline_baggage.py` | 61 | **100%** | **100%** (26/26) |
+
+The code-coverage tests ran every line but never took the branch where excess baggage is over 20 kg on a non-international route. The branch-coverage tests cover it, along with boundary values for every decision.
+
+See [`Lab-6/README.md`](Lab-6/README.md) for the full analysis.
+
 ---
 
 ## Repository Structure
 
 ```
-28_defender/
+PES1UG24CS156_SE/
 ├── README.md
 ├── game.py                  # Lab 4 game (fixed)
 ├── Lab-1/                   # Requirements & use-case modelling
 ├── Lab-2/                   # Jira backlog & sprint simulation
 ├── Lab-3/                   # Component diagram & architecture
 ├── Lab-4/                   # Vibe coding: Defender repair
-└── Lab-5/                   # Static code analysis
-    ├── PES1UG24CS156_LAB5.pdf
-    ├── blood_donation.py
-    ├── blood_donation_original.py
-    ├── issues.md
-    ├── reflection.md
-    └── reports/{before,after}/
+├── Lab-5/                   # Static code analysis
+│   ├── PES1UG24CS156_LAB5.pdf
+│   ├── blood_donation.py
+│   ├── blood_donation_original.py
+│   ├── issues.md
+│   ├── reflection.md
+│   └── reports/{before,after}/
+└── Lab-6/                   # Code & branch coverage
+    ├── airline_baggage.py
+    ├── test_airline_baggage.py
+    ├── CodeCoverageTest_PES1UG24CS156_airline_baggage.py
+    ├── BranchCoverageTest_PES1UG24CS156_airline_baggage.py
+    ├── screenshots/
+    └── reports/
 ```
