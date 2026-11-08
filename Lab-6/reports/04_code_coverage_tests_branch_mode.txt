@@ -1,0 +1,20 @@
+PS D:\SEM5\SE\lab3\28_defender\Lab-6> echo "Dhruva Myakeri | PES1UG24CS156 | Lab 6 - airline_baggage"
+Dhruva Myakeri | PES1UG24CS156 | Lab 6 - airline_baggage
+PS D:\SEM5\SE\lab3\28_defender\Lab-6> coverage erase
+PS D:\SEM5\SE\lab3\28_defender\Lab-6> coverage run --branch -m pytest CodeCoverageTest_PES1UG24CS156_airline_baggage.py
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\SEM5\SE\lab3\28_defender\Lab-6
+collected 11 items
+
+CodeCoverageTest_PES1UG24CS156_airline_baggage.py ...........            [100%]
+
+============================= 11 passed in 0.04s ==============================
+PS D:\SEM5\SE\lab3\28_defender\Lab-6> coverage report -m
+Name                                                Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------------------------------
+CodeCoverageTest_PES1UG24CS156_airline_baggage.py      26      0      0      0   100%
+airline_baggage.py                                     37      0     26      1    98%   21->23
+-----------------------------------------------------------------------------------------------
+TOTAL                                                  63      0     26      1    99%
+PS D:\SEM5\SE\lab3\28_defender\Lab-6>

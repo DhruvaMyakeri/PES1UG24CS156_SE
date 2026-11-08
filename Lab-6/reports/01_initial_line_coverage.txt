@@ -1,0 +1,18 @@
+PS D:\SEM5\SE\lab3\28_defender\Lab-6> coverage erase
+PS D:\SEM5\SE\lab3\28_defender\Lab-6> coverage run -m pytest test_airline_baggage.py
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\SEM5\SE\lab3\28_defender\Lab-6
+collected 2 items
+
+test_airline_baggage.py ..                                               [100%]
+
+============================== 2 passed in 0.03s ==============================
+PS D:\SEM5\SE\lab3\28_defender\Lab-6> coverage report -m
+Name                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------
+airline_baggage.py           37     23    38%   6, 8, 11, 15-23, 28, 30, 35-45
+test_airline_baggage.py       6      0   100%
+-------------------------------------------------------
+TOTAL                        43     23    47%
+PS D:\SEM5\SE\lab3\28_defender\Lab-6>
