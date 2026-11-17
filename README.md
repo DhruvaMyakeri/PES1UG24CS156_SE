@@ -16,6 +16,7 @@
 | 4 | Vibe Coding: Defender Repair | [`Lab-4/`](Lab-4/) | Fixed game, before/after gameplay videos, LLM chat history |
 | 5 | Static Code Analysis | [`Lab-5/`](Lab-5/) | Fixed `blood_donation.py`, before/after reports, issue table, reflection, lab report PDF |
 | 6 | Code & Branch Coverage Analysis | [`Lab-6/`](Lab-6/) | Code- and branch-coverage test files for `airline_baggage.py`, coverage screenshots and reports |
+| 7 | Fuzzing for Input Validation Bugs | [`Lab-7/`](Lab-7/) | Hypothesis test file, hardened `airline_baggage.py`, screenshots, lab report PDF |
 
 ---
 
@@ -99,6 +100,19 @@ The code-coverage tests ran every line but never took the branch where excess ba
 
 See [`Lab-6/README.md`](Lab-6/README.md) for the full analysis.
 
+## Lab 7: Fuzzing for Input Validation Bugs
+
+The three functions in `airline_baggage.py` (from the same assigned repo, `lab7/`) were fuzzed with Hypothesis and then hardened.
+
+| Run | Result |
+|-----|--------|
+| `pytest test_airline_baggage.py` on the original code | **9 failed**, 2 passed |
+| `pytest test_airline_baggage.py` on the fixed code | **11 passed** |
+
+Hypothesis found crashes on `''` and `None` in all three functions. It also found a 0/`nan` baggage total and a middle-name bug in `tag_label` (`"Rahul Kumar Sharma"` gave `R. KUMAR`). Invalid input now returns `None` and the program prints a helpful message instead of crashing.
+
+See [`Lab-7/README.md`](Lab-7/README.md) and `Lab-7/PES1UG24CS156_LAB7.pdf`.
+
 ---
 
 ## Repository Structure
@@ -118,11 +132,18 @@ PES1UG24CS156_SE/
 │   ├── issues.md
 │   ├── reflection.md
 │   └── reports/{before,after}/
-└── Lab-6/                   # Code & branch coverage
-    ├── airline_baggage.py
+├── Lab-6/                   # Code & branch coverage
+│   ├── airline_baggage.py
+│   ├── test_airline_baggage.py
+│   ├── CodeCoverageTest_PES1UG24CS156_airline_baggage.py
+│   ├── BranchCoverageTest_PES1UG24CS156_airline_baggage.py
+│   ├── screenshots/
+│   └── reports/
+└── Lab-7/                   # Fuzz testing with Hypothesis
+    ├── PES1UG24CS156_LAB7.pdf
+    ├── airline_baggage.py          # fixed
+    ├── airline_baggage_original.py
     ├── test_airline_baggage.py
-    ├── CodeCoverageTest_PES1UG24CS156_airline_baggage.py
-    ├── BranchCoverageTest_PES1UG24CS156_airline_baggage.py
     ├── screenshots/
     └── reports/
 ```
