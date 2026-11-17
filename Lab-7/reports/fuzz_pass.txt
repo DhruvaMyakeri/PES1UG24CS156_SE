@@ -1,0 +1,13 @@
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> echo "Dhruva Myakeri | PES1UG24CS156 | Lab 7 - airline_baggage"
+Dhruva Myakeri | PES1UG24CS156 | Lab 7 - airline_baggage
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> pytest test_airline_baggage.py
+============================================ test session starts ============================================
+platform win32 -- Python 3.12.10, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\SEM5\SE\lab3\28_defender\Lab-7
+plugins: hypothesis-6.170.15
+collected 11 items
+
+test_airline_baggage.py ...........                                                                    [100%]
+
+============================================ 11 passed in 2.28s =============================================
+PS D:\SEM5\SE\lab3\28_defender\Lab-7>

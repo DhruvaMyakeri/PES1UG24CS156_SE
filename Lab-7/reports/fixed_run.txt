@@ -1,0 +1,63 @@
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> echo "Dhruva Myakeri | PES1UG24CS156 | Lab 7 - airline_baggage"
+Dhruva Myakeri | PES1UG24CS156 | Lab 7 - airline_baggage
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI-203-12A
+Airline, Flight and Seat Letter: ('AI', 203, 'A')
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): 12.5,7,23
+Total Weight: 42.5
+
+==== Running tag_label ====
+Enter a passenger name (first and last): Dhruva Myakeri
+Tag Label: D. MYAKERI
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI203
+Invalid input. Use AIRLINE-FLIGHT-SEAT, e.g. AI-203-12A.
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): 12.5,7,23
+Total Weight: 42.5
+
+==== Running tag_label ====
+Enter a passenger name (first and last): Dhruva Myakeri
+Tag Label: D. MYAKERI
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI-203-12A
+Airline, Flight and Seat Letter: ('AI', 203, 'A')
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): 12.5,,7
+Invalid input. Use positive numbers up to 100 kg separated by commas.
+
+==== Running tag_label ====
+Enter a passenger name (first and last): Dhruva Myakeri
+Tag Label: D. MYAKERI
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI-203-12A
+Airline, Flight and Seat Letter: ('AI', 203, 'A')
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): 12.5,7,23
+Total Weight: 42.5
+
+==== Running tag_label ====
+Enter a passenger name (first and last): Dhruva
+Invalid input. Enter at least a first and a last name using letters only.
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI-203-12A
+Airline, Flight and Seat Letter: ('AI', 203, 'A')
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): nan,-40,inf
+Invalid input. Use positive numbers up to 100 kg separated by commas.
+
+==== Running tag_label ====
+Enter a passenger name (first and last): Rahul Kumar Sharma
+Tag Label: R. SHARMA
+PS D:\SEM5\SE\lab3\28_defender\Lab-7>
