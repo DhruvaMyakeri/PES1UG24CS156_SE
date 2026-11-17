@@ -1,0 +1,81 @@
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> echo "Dhruva Myakeri | PES1UG24CS156 | Lab 7 - airline_baggage"
+Dhruva Myakeri | PES1UG24CS156 | Lab 7 - airline_baggage
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI-203-12A
+Airline, Flight and Seat Letter: ('AI', 203, 'A')
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): 12.5,7,23
+Total Weight: 42.5
+
+==== Running tag_label ====
+Enter a passenger name (first and last): Dhruva Myakeri
+Tag Label: D. MYAKERI
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI203
+Traceback (most recent call last):
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 29, in <module>
+    main()
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 15, in main
+    result = parse_booking(user_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 2, in parse_booking
+    airline, flight, seat = code.split('-')
+    ^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 1)
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI-203-12A
+Airline, Flight and Seat Letter: ('AI', 203, 'A')
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): 12.5,,7
+Traceback (most recent call last):
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 29, in <module>
+    main()
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 20, in main
+    result = total_weight(user_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in total_weight
+    return sum(float(w) for w in weights_csv.split(','))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in <genexpr>
+    return sum(float(w) for w in weights_csv.split(','))
+               ^^^^^^^^
+ValueError: could not convert string to float: ''
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI-203-12A
+Airline, Flight and Seat Letter: ('AI', 203, 'A')
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): 12.5,7,23
+Total Weight: 42.5
+
+==== Running tag_label ====
+Enter a passenger name (first and last): Dhruva
+Traceback (most recent call last):
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 29, in <module>
+    main()
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 25, in main
+    result = tag_label(user_input)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 10, in tag_label
+    return parts[0][0].upper() + '. ' + parts[1].upper()
+                                        ~~~~~^^^
+IndexError: list index out of range
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> python airline_baggage.py
+==== Running parse_booking ====
+Enter a booking code (e.g. AI-203-12A): AI-203-12A
+Airline, Flight and Seat Letter: ('AI', 203, 'A')
+
+==== Running total_weight ====
+Enter bag weights in kg as CSV (e.g. 12.5,7,23): nan,-40,inf
+Total Weight: nan
+
+==== Running tag_label ====
+Enter a passenger name (first and last): Rahul Kumar Sharma
+Tag Label: R. KUMAR
+PS D:\SEM5\SE\lab3\28_defender\Lab-7>

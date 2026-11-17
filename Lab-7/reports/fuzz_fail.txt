@@ -1,0 +1,413 @@
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> echo "Dhruva Myakeri | PES1UG24CS156 | Lab 7 - airline_baggage"
+Dhruva Myakeri | PES1UG24CS156 | Lab 7 - airline_baggage
+PS D:\SEM5\SE\lab3\28_defender\Lab-7> pytest test_airline_baggage.py
+============================================ test session starts ============================================
+platform win32 -- Python 3.12.10, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\SEM5\SE\lab3\28_defender\Lab-7
+plugins: hypothesis-6.170.15
+collected 11 items
+
+test_airline_baggage.py FFF.FFF.FFF                                                                    [100%]
+
+================================================= FAILURES ==================================================
+________________________________________ test_parse_booking_no_crash ________________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 33, in test_parse_booking_no_crash
+  |     @given(st.text() | st.none())
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 36, in test_parse_booking_no_crash
+    |     parse_booking(s)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 2, in parse_booking
+    |     airline, flight, seat = code.split('-')
+    |     ^^^^^^^^^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 3, got 1)
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 38, in test_parse_booking_no_crash
+    |     assert False, f"parse_booking crashed with: {e!r}"
+    | AssertionError: parse_booking crashed with: ValueError('not enough values to unpack (expected 3, got 1)')
+    | assert False
+    | Failing test case: test_parse_booking_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 36, in test_parse_booking_no_crash
+    |     parse_booking(s)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 2, in parse_booking
+    |     airline, flight, seat = code.split('-')
+    |                             ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 38, in test_parse_booking_no_crash
+    |     assert False, f"parse_booking crashed with: {e!r}"
+    | AssertionError: parse_booking crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_parse_booking_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+___________________________________ test_parse_booking_no_crash_any_type ____________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 42, in test_parse_booking_no_crash_any_type
+  |     def test_parse_booking_no_crash_any_type(x):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 44, in test_parse_booking_no_crash_any_type
+    |     parse_booking(x)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 2, in parse_booking
+    |     airline, flight, seat = code.split('-')
+    |     ^^^^^^^^^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 3, got 1)
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 46, in test_parse_booking_no_crash_any_type
+    |     assert False, f"parse_booking crashed with: {e!r}"
+    | AssertionError: parse_booking crashed with: ValueError('not enough values to unpack (expected 3, got 1)')
+    | assert False
+    | Failing test case: test_parse_booking_no_crash_any_type(
+    |     x='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 44, in test_parse_booking_no_crash_any_type
+    |     parse_booking(x)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 2, in parse_booking
+    |     airline, flight, seat = code.split('-')
+    |                             ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 46, in test_parse_booking_no_crash_any_type
+    |     assert False, f"parse_booking crashed with: {e!r}"
+    | AssertionError: parse_booking crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_parse_booking_no_crash_any_type(
+    |     x=None,
+    | )
+    +------------------------------------
+________________________________ test_parse_booking_result_is_valid_or_none _________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 58, in test_parse_booking_result_is_valid_or_none
+  |     @given(NEAR_CODE)
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 61, in test_parse_booking_result_is_valid_or_none
+    |     result = parse_booking(code)
+    |              ^^^^^^^^^^^^^^^^^^^
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 3, in parse_booking
+    |     return airline.upper(), int(flight), seat[-1].upper()
+    |                             ^^^^^^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 63, in test_parse_booking_result_is_valid_or_none
+    |     assert False, f"parse_booking crashed with: {e!r}"
+    | AssertionError: parse_booking crashed with: ValueError("invalid literal for int() with base 10: ''")
+    | assert False
+    | Failing test case: test_parse_booking_result_is_valid_or_none(
+    |     code='--',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 61, in test_parse_booking_result_is_valid_or_none
+    |     result = parse_booking(code)
+    |              ^^^^^^^^^^^^^^^^^^^
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 2, in parse_booking
+    |     airline, flight, seat = code.split('-')
+    |     ^^^^^^^^^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 3, got 1)
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 63, in test_parse_booking_result_is_valid_or_none
+    |     assert False, f"parse_booking crashed with: {e!r}"
+    | AssertionError: parse_booking crashed with: ValueError('not enough values to unpack (expected 3, got 1)')
+    | assert False
+    | Failing test case: test_parse_booking_result_is_valid_or_none(
+    |     code='',
+    | )
+    +------------------------------------
+________________________________________ test_total_weight_no_crash _________________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 85, in test_total_weight_no_crash
+  |     @given(st.text() | st.none())
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 88, in test_total_weight_no_crash
+    |     total_weight(s)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in total_weight
+    |     return sum(float(w) for w in weights_csv.split(','))
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in <genexpr>
+    |     return sum(float(w) for w in weights_csv.split(','))
+    |                ^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 90, in test_total_weight_no_crash
+    |     assert False, f"total_weight crashed with: {e!r}"
+    | AssertionError: total_weight crashed with: ValueError("could not convert string to float: ''")
+    | assert False
+    | Failing test case: test_total_weight_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 88, in test_total_weight_no_crash
+    |     total_weight(s)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in total_weight
+    |     return sum(float(w) for w in weights_csv.split(','))
+    |                                  ^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 90, in test_total_weight_no_crash
+    |     assert False, f"total_weight crashed with: {e!r}"
+    | AssertionError: total_weight crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_total_weight_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+____________________________________ test_total_weight_no_crash_any_type ____________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 94, in test_total_weight_no_crash_any_type
+  |     def test_total_weight_no_crash_any_type(x):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 96, in test_total_weight_no_crash_any_type
+    |     total_weight(x)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in total_weight
+    |     return sum(float(w) for w in weights_csv.split(','))
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in <genexpr>
+    |     return sum(float(w) for w in weights_csv.split(','))
+    |                ^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 98, in test_total_weight_no_crash_any_type
+    |     assert False, f"total_weight crashed with: {e!r}"
+    | AssertionError: total_weight crashed with: ValueError("could not convert string to float: ''")
+    | assert False
+    | Failing test case: test_total_weight_no_crash_any_type(
+    |     x='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 96, in test_total_weight_no_crash_any_type
+    |     total_weight(x)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in total_weight
+    |     return sum(float(w) for w in weights_csv.split(','))
+    |                                  ^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 98, in test_total_weight_no_crash_any_type
+    |     assert False, f"total_weight crashed with: {e!r}"
+    | AssertionError: total_weight crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_total_weight_no_crash_any_type(
+    |     x=None,
+    | )
+    +------------------------------------
+_________________________________ test_total_weight_result_is_valid_or_none _________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 113, in test_total_weight_result_is_valid_or_none
+  |     @given(WEIGHT_CSV)
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 116, in test_total_weight_result_is_valid_or_none
+    |     result = total_weight(csv)
+    |              ^^^^^^^^^^^^^^^^^
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in total_weight
+    |     return sum(float(w) for w in weights_csv.split(','))
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 6, in <genexpr>
+    |     return sum(float(w) for w in weights_csv.split(','))
+    |                ^^^^^^^^
+    | ValueError: could not convert string to float: ''
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 118, in test_total_weight_result_is_valid_or_none
+    |     assert False, f"total_weight crashed with: {e!r}"
+    | AssertionError: total_weight crashed with: ValueError("could not convert string to float: ''")
+    | assert False
+    | Failing test case: test_total_weight_result_is_valid_or_none(
+    |     csv='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 121, in test_total_weight_result_is_valid_or_none
+    |     assert result > 0, f"total_weight({csv!r}) = {result}"
+    | AssertionError: total_weight('0.0') = 0.0
+    | assert 0.0 > 0
+    | Failing test case: test_total_weight_result_is_valid_or_none(
+    |     csv='0.0',
+    | )
+    +------------------------------------
+__________________________________________ test_tag_label_no_crash __________________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 133, in test_tag_label_no_crash
+  |     @given(st.text() | st.none())
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 136, in test_tag_label_no_crash
+    |     tag_label(s)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 10, in tag_label
+    |     return parts[0][0].upper() + '. ' + parts[1].upper()
+    |            ~~~~~^^^
+    | IndexError: list index out of range
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 138, in test_tag_label_no_crash
+    |     assert False, f"tag_label crashed with: {e!r}"
+    | AssertionError: tag_label crashed with: IndexError('list index out of range')
+    | assert False
+    | Failing test case: test_tag_label_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 136, in test_tag_label_no_crash
+    |     tag_label(s)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 9, in tag_label
+    |     parts = name.split()
+    |             ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 138, in test_tag_label_no_crash
+    |     assert False, f"tag_label crashed with: {e!r}"
+    | AssertionError: tag_label crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_tag_label_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+_____________________________________ test_tag_label_no_crash_any_type ______________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 142, in test_tag_label_no_crash_any_type
+  |     def test_tag_label_no_crash_any_type(x):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 144, in test_tag_label_no_crash_any_type
+    |     tag_label(x)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 10, in tag_label
+    |     return parts[0][0].upper() + '. ' + parts[1].upper()
+    |            ~~~~~^^^
+    | IndexError: list index out of range
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 146, in test_tag_label_no_crash_any_type
+    |     assert False, f"tag_label crashed with: {e!r}"
+    | AssertionError: tag_label crashed with: IndexError('list index out of range')
+    | assert False
+    | Failing test case: test_tag_label_no_crash_any_type(
+    |     x='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 144, in test_tag_label_no_crash_any_type
+    |     tag_label(x)
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\airline_baggage.py", line 9, in tag_label
+    |     parts = name.split()
+    |             ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | 
+    | During handling of the above exception, another exception occurred:
+    | 
+    | Traceback (most recent call last):
+    |   File "D:\SEM5\SE\lab3\28_defender\Lab-7\test_airline_baggage.py", line 146, in test_tag_label_no_crash_any_type
+    |     assert False, f"tag_label crashed with: {e!r}"
+    | AssertionError: tag_label crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_tag_label_no_crash_any_type(
+    |     x=None,
+    | )
+    +------------------------------------
+______________________________ test_tag_label_uses_first_initial_and_last_name ______________________________
+
+    @given(st.lists(WORD, min_size=2, max_size=4), st.sampled_from([" ", "  ", "\t"]))
+>   def test_tag_label_uses_first_initial_and_last_name(words, sep):
+                   ^^^
+
+test_airline_baggage.py:153: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+words = ['A', 'A', 'AA'], sep = ' '
+
+    @given(st.lists(WORD, min_size=2, max_size=4), st.sampled_from([" ", "  ", "\t"]))
+    def test_tag_label_uses_first_initial_and_last_name(words, sep):
+        # "first [middle ...] last" -> "F. LAST"
+        label = tag_label(sep.join(words))
+>       assert label == words[0][0].upper() + ". " + words[-1].upper()
+E       AssertionError: assert 'A. A' == 'A. AA'
+E         
+E         - A. AA
+E         ?     -
+E         + A. A
+E       Failing test case: test_tag_label_uses_first_initial_and_last_name(
+E           words=['A', 'A', 'AA'],
+E           sep=' ',
+E       )
+
+test_airline_baggage.py:156: AssertionError
+========================================== short test summary info ==========================================
+FAILED test_airline_baggage.py::test_parse_booking_no_crash - ExceptionGroup: Hypothesis found 2 distinct f...
+FAILED test_airline_baggage.py::test_parse_booking_no_crash_any_type - ExceptionGroup: Hypothesis found 2 d...
+FAILED test_airline_baggage.py::test_parse_booking_result_is_valid_or_none - ExceptionGroup: Hypothesis fou...
+FAILED test_airline_baggage.py::test_total_weight_no_crash - ExceptionGroup: Hypothesis found 2 distinct fa...
+FAILED test_airline_baggage.py::test_total_weight_no_crash_any_type - ExceptionGroup: Hypothesis found 2 di...
+FAILED test_airline_baggage.py::test_total_weight_result_is_valid_or_none - ExceptionGroup: Hypothesis foun...
+FAILED test_airline_baggage.py::test_tag_label_no_crash - ExceptionGroup: Hypothesis found 2 distinct failu...
+FAILED test_airline_baggage.py::test_tag_label_no_crash_any_type - ExceptionGroup: Hypothesis found 2 disti...
+FAILED test_airline_baggage.py::test_tag_label_uses_first_initial_and_last_name - AssertionError: assert 'A...
+======================================== 9 failed, 2 passed in 1.09s ========================================
+PS D:\SEM5\SE\lab3\28_defender\Lab-7>
